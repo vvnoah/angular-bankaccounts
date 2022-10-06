@@ -12,13 +12,21 @@ export class AppComponent {
   constructor(private account:AccountService){}
 
   title = 'angular-bankaccounts';
-  
+
   users = [
-    {"userName" : "Killian", "userBalance" : 0},
-    {"userName" : "Nicky", "userBalance" : 0},
-    {"userName" : "Martijn", "userBalance" : 0}
+    {userName:"Killian", userBalance: 0},
+    {userName:"Martijn", userBalance: 0},
+    {userName:"Nicky", userBalance: 0}
   ];
+
   
+  item:any;
+  updateBalance(item:any){
+    let index = this.users.indexOf(item);
+    item.userBalance += 5;
+    this.users[index] = item;
+  }
+
   balance = this.account.balance;
 
   deposit(){

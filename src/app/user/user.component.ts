@@ -15,6 +15,4 @@ export class UserComponent implements OnInit {
 
   @Input() userName:string = "";
   @Input() userBalance:number = 0;
-
-
 }

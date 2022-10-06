@@ -1,4 +1,9 @@
-<user *ngFor="let user of users" [userName]="user.userName" [userBalance]="user.userBalance"></user>
+<div *ngFor="let user of users">
+    <user [userName]="user.userName" [userBalance]="user.userBalance"></user>
+    <button (click)="updateBalance(user)">Update Balance</button>
+</div>
+
+
 <br>
 <p>Joint account balance: {{ balance | currency }}</p>
 <button (click)="deposit()">Deposit</button>
