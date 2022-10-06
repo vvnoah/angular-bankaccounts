@@ -1,2 +1,5 @@
 <user *ngFor="let user of users" [userName]="user"></user>
+<br>
 <p>Joint account balance: {{ balance | currency }}</p>
+<button (click)="deposit()">Deposit</button>
+<button (click)="withdraw()">Withdraw</button>
