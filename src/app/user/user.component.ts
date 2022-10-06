@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'user',
@@ -10,6 +10,8 @@ export class UserComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  
   }
 
+  @Input() userName:string = "";
 }
