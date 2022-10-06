@@ -7,7 +7,7 @@ export class AccountService {
 
   constructor() { }
 
-  balance:number = 0;
+  balance:number = 2000;
 
   getBalance(){
     return this.balance;
