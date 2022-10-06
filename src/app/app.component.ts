@@ -12,7 +12,13 @@ export class AppComponent {
   constructor(private account:AccountService){}
 
   title = 'angular-bankaccounts';
-  users = ["Killian", "Nicky", "Martijn"];
+  
+  users = [
+    {"userName" : "Killian", "userBalance" : 0},
+    {"userName" : "Nicky", "userBalance" : 0},
+    {"userName" : "Martijn", "userBalance" : 0}
+  ];
+  
   balance = this.account.balance;
 
   deposit(){
