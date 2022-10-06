@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { __values } from 'tslib';
 import { AccountService } from './account.service';
 
 @Component({
@@ -18,20 +19,31 @@ export class AppComponent {
     {userName:"Martijn", userBalance: 0},
     {userName:"Nicky", userBalance: 0}
   ];
-
   
-  item:any;
-  updateBalance(item:any){
-    let index = this.users.indexOf(item);
-    item.userBalance += 5;
-    this.users[index] = item;
-  }
-
+  // Handling payments
   balance = this.account.balance;
 
-  deposit(){
-    this.account.balance += 5;
-    this.balance = this.account.balance;
+  updateBalance(target:any, amount:number, paymentOperation:string){
+    if(paymentOperation == "deposit"){
+      // Updating user
+      let index = this.users.indexOf(target);
+      target.userBalance -= amount;
+      this.users[index] = target;
+
+      // Updating joint account
+      this.account.balance += amount;
+      this.balance = this.account.balance;
+    } else if (paymentOperation == "withdraw"){
+      // Updating user
+      let index = this.users.indexOf(target);
+      target.userBalance += amount;
+      this.users[index] = target;
+
+      // Updating joint account
+      this.account.balance -= amount;
+      this.balance = this.account.balance;
+    } else {
+    }
   }
 
   withdraw(){
