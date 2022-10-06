@@ -23,31 +23,32 @@ export class AppComponent {
   // Handling payments
   balance = this.account.balance;
 
-  updateBalance(target:any, amount:number, paymentOperation:string){
+  amount:number = 0;
+  getAmount(event:any){
+    this.amount = event.target.value;
+    return this.amount;
+  }
+
+  updateBalance(target:any, paymentOperation:string){
     if(paymentOperation == "deposit"){
       // Updating user
       let index = this.users.indexOf(target);
-      target.userBalance -= amount;
+      target.userBalance -= Number(this.amount);
       this.users[index] = target;
 
       // Updating joint account
-      this.account.balance += amount;
+      this.account.balance += Number(this.amount);
       this.balance = this.account.balance;
+
     } else if (paymentOperation == "withdraw"){
       // Updating user
       let index = this.users.indexOf(target);
-      target.userBalance += amount;
+      target.userBalance += Number(this.amount);
       this.users[index] = target;
 
       // Updating joint account
-      this.account.balance -= amount;
+      this.account.balance -= Number(this.amount);
       this.balance = this.account.balance;
-    } else {
     }
-  }
-
-  withdraw(){
-    this.account.balance -= 5;
-    this.balance = this.account.balance;
   }
 }

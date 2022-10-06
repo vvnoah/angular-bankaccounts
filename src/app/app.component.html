@@ -1,9 +1,34 @@
-<div *ngFor="let user of users">
-    <user [userName]="user.userName" [userBalance]="user.userBalance"></user>
-    <button (click)="updateBalance(user, 20, 'deposit')">Deposit to joint account</button>
-    <button (click)="updateBalance(user, 20, 'withdraw')">Withdraw from joint account</button>
-</div>
-
-
-<br>
-<p>Joint account balance: {{ balance | currency }}</p>
+<table>
+    <tr>
+        <th>Account</th>
+        <th>Ballance</th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+    <tr *ngFor="let user of users">
+        <td>
+            {{user.userName}}
+        </td>
+        <td>
+            {{user.userBalance | currency}}
+        </td>
+        <td>
+            <input type="number" (change)="getAmount($event)">
+        </td>
+        <td>
+            <button (click)="updateBalance(user, 'deposit')">Deposit</button>
+        </td>
+        <td>
+            <button (click)="updateBalance(user, 'withdraw')">withdraw</button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Joint account
+        </td>
+        <td>
+            {{balance | currency}}
+        </td>
+    </tr>
+</table>
