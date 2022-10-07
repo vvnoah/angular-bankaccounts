@@ -33,15 +33,17 @@ export class AppComponent {
     {userName:"Brent", userBalance: 0},
   ];
   
+  
   // Handling payments
-  balance = this.account.balance;
 
+  // Getting value from html input
   amount:number = 0;
   getAmount(event:any){
     this.amount = event.target.value;
     return this.amount;
   }
-
+  
+  balance = this.account.balance;
   updateBalance(target:any, paymentOperation:string){
     if(paymentOperation == "deposit"){
       // Updating user
