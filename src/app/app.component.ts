@@ -17,7 +17,20 @@ export class AppComponent {
   users = [
     {userName:"Killian", userBalance: 0},
     {userName:"Martijn", userBalance: 0},
-    {userName:"Nicky", userBalance: 0}
+    {userName:"Nicky", userBalance: 0},
+    {userName:"Elmira", userBalance: 0},
+    {userName:"Elvin", userBalance: 0},
+    {userName:"Siegmund", userBalance: 0},
+    {userName:"Calvin", userBalance: 0},
+    {userName:"Sebastiaan", userBalance: 0},
+    {userName:"Kristof", userBalance: 0},
+    {userName:"Jordy", userBalance: 0},
+    {userName:"Alexander", userBalance: 0},
+    {userName:"Ward", userBalance: 0},
+    {userName:"Noah", userBalance: 0},
+    {userName:"David", userBalance: 0},
+    {userName:"Bjarne", userBalance: 0},
+    {userName:"Brent", userBalance: 0},
   ];
   
   // Handling payments
